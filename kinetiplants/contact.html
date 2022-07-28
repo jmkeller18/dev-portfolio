@@ -54,49 +54,51 @@
           If you love KinetiPlants and can't get enough, don't forget to take this opportunity to subscribe to our
           newsletter. You will receive updates on the newest products, promotions, as well as plant care tips and other
           miscellaneous stories in the plant world! You can always unsubscribe at any time if you change your mind via
-          the link that is at the bottom of every newsletter email, although we don't think you'll ever want to! 
+          the link that is at the bottom of every newsletter email, although we don't think you'll ever want to!
         </p>
       </div>
 
       <form>
         <h3>Contact Form</h3>
+        <div class="name-container">
+          <div>
+            <label for="f-name">First Name:</label>
+            <input type="text" id="f-name">
+          </div>
 
-        <label for="name">Full Name:</label>
-        <input type="text" id="name">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email">
-
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="phone">
-
-        <p>Preferred Contact Method:</p>
-        <div class="radio-container">
-          <label for="pref1:">Email</label>
-          <input type="radio" id="pref1" name="cont-pref" value="email">
-
-          <label for="pref2:">Text</label>
-          <input type="radio" id="pref2" name="cont-pref" value="text">
-
-          <label for="pref3:">Phone</label>
-          <input type="radio" id="pref3" name="cont-pref" value="phone">
+          <div>
+            <label for="l-name">Last Name:</label>
+            <input type="text" id="l-name">
+          </div>
         </div>
-        <label for="subject">Subject:</label>
-        <select name="subject" id="subject">
-          <option value="null"> </option>
-          <option value="status">Order Status</option>
-          <option value="question">Question About Products</option>
-          <option value="issue">Issue With Product</option>
-          <option value="other">Other</option>
-        </select>
 
-        <label for="msg">Message:</label>
-        <textarea id="msg">
+        <div class="input-block">
+          <label for="email">Email:</label>
+          <input type="email" id="email">
+        </div>
+
+        <div class="input-block">
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone">
+        </div>
+
+        <div class="input-block">
+          <label for="subject">Subject:</label>
+          <select name="subject" id="subject">
+            <option value="null"> </option>
+            <option value="status">Order Status</option>
+            <option value="question">Question About Products</option>
+            <option value="issue">Issue With Product</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="input-block">
+          <label for="msg">Message:</label>
+          <textarea id="msg">
         </textarea>
-        <div class="subscribe-container">
-          <label for="subscribe">Subscribe To Newsletter</label>
-          <input type="checkbox" id="subscribe">
         </div>
+
         <button type="submit">Send</button>
       </form>
     </section>

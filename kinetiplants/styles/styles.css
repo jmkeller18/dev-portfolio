@@ -488,7 +488,7 @@ select {
 }
 
 input[type="radio"] {
-  margin: auto;
+  margin-left: 1em;
 }
 
 textarea {

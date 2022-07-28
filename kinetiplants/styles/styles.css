@@ -30,6 +30,10 @@ main {
   max-width: 750px;
 }
 
+:hover {
+  transition: .1s;
+}
+
 
 /* ===== TYPOGRAPHY ====== */
 
@@ -142,6 +146,7 @@ footer p {
 
 .social-icons:hover {
   color: rgba(0, 0, 0, .75);
+  transform: scale(1.1);
 }
 
 
@@ -524,7 +529,7 @@ form button {
   font-family: 'open sans', arial;
   font-weight: 300;
   border-radius: 9px;
-  padding-top: 3em;
+  padding-top: 1em;
 }
 
 .contact-info-container h3 {
@@ -537,7 +542,7 @@ form button {
 
 .contact-info-tile {
   margin-bottom: 3em;
-  padding: 1.5em;
+  padding: 3em 1em;
   border-radius: 8px;
   background-color: rgb(122, 152, 110);
   width: 40%;
@@ -548,7 +553,7 @@ form button {
 .fa-map-pin,
 .fa-phone,
 .fa-envelope {
-  height: calc(40px + (55 - 40) * (100vw - 320px) / (1900 - 320));
+  height: calc(34px + (55 - 34) * (100vw - 320px) / (1900 - 320));
 }
 
 li {
@@ -730,6 +735,7 @@ ul {
   .contact-info-container {
     display: flex;
     justify-content: space-evenly;
+    padding-top: 0;
   }
 
   .contact-info-tile {

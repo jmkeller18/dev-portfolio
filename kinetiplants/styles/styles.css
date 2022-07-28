@@ -1,7 +1,3 @@
-/* Jason Kellermeyer
-WEB 150, ASN6
-Business name: KinetiPlants */
-
 /* *************************************
      MULTIPLE PAGES
 ***************************************/
@@ -245,8 +241,9 @@ h1 {
 }
 
 .home .header-img {
-  box-shadow: 1vw 1vw 10px rgb(33, 33, 33);
+  box-shadow: .7vw .7vw 15px rgb(82, 82, 82);
   margin: .5em auto 2em;
+  max-width: 400px;
 }
 
 .welcome-img-cta-container {
@@ -261,6 +258,7 @@ h1 {
   color: rgb(236, 236, 233);
   text-decoration: none;
   align-self: center;
+  margin-top: 1em;
 }
 
 .cta-large-screens:hover,
@@ -490,7 +488,7 @@ select {
 }
 
 input[type="radio"] {
-  margin: 0
+  margin: auto;
 }
 
 textarea {
@@ -666,9 +664,10 @@ ul {
     margin: auto;
   }
 
-  .welcome-img-cta-container img {
+  .home .header-img {
     margin: auto;
     margin-bottom: 4vw;
+    max-width: 550px;
   }
 
   .welcome-img-cta-container {
@@ -810,7 +809,7 @@ ul {
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 2.75em;
-    padding-bottom: 1.25em;
+    padding-bottom: 2.25em;
   }
 
   .welcome-flex-container div:nth-of-type(2) {

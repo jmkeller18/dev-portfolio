@@ -14,7 +14,7 @@ body {
   margin: 0;
   background-color: rgb(236, 236, 233);
   font-family: 'josefin sans', sans-serif;
-  padding-top: 94px;
+  padding-top: calc(90px + 4vw);
 }
 
 main {
@@ -23,11 +23,10 @@ main {
 }
 
 .header-img {
-  margin: 0;
   display: block;
   border-radius: 5px;
   width: 90%;
-  max-width: 750px;
+  margin: auto;
 }
 
 :hover {
@@ -64,6 +63,7 @@ header {
   left: 0;
   right: 0;
   padding: 10px 3vw;
+  height: calc(90px + 4vw);
 }
 
 .logo-container {
@@ -72,7 +72,7 @@ header {
 }
 
 .logo-container img {
-  width: 40px;
+  width: calc(40px + (70 - 40) * (100vw - 320px) / (1900 - 320));
   margin-right: 2vw;
 }
 
@@ -102,7 +102,6 @@ nav a {
 }
 
 nav a:hover {
-  font-weight: 500;
   transform: scale(1.1);
 }
 
@@ -114,21 +113,19 @@ nav a:hover {
 /* ===== FOOTER ====== */
 
 footer {
-  height: 90px;
+  height: calc(70px + 5vw);
   border-top: solid 2px rgb(207, 203, 200);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: 125px;
 }
 
 footer p {
   margin: 0;
   font-family: 'open sans', arial;
-  font-weight: 200;
   font-size: calc(10px + (16 - 10) * (100vw - 320px) / (1900 - 320));
-  color: rgb(69, 71, 62);
-
 }
 
 .container-social-icons {
@@ -141,7 +138,7 @@ footer p {
 
 .social-icons {
   color: rgb(0, 0, 0);
-  height: calc(25px + (40 - 25) * (100vw - 320px) / (1900 - 320));
+  height: calc(26px + (38 - 26) * (100vw - 320px) / (1900 - 320));
 }
 
 .social-icons:hover {
@@ -155,7 +152,7 @@ footer p {
 .product .header-img,
 .contact .header-img {
   box-shadow: .7vw .7vw 10px rgb(147, 147, 147);
-  margin: auto;
+  max-width: 640px;
 }
 
 .product section,
@@ -165,17 +162,16 @@ footer p {
 
 .product section:first-child,
 .contact section:first-child {
-  margin-bottom: 2em;
+  margin-bottom: 3.5em;
 }
 
 h1 {
   color: rgb(0, 0, 0);
-  font-size: calc(28px + (80 - 28) * (100vw - 320px) / (1900 - 320));
+  font-size: calc(26px + (75 - 26) * (100vw - 320px) / (1900 - 320));
   font-weight: 200;
-  max-width: 745px;
+  max-width: 750px;
   letter-spacing: .1rem;
-  margin: 1.5em auto .25em;
-  line-height: 1.25;
+  margin: 1em auto .5em;
 }
 
 .subheader {
@@ -185,10 +181,9 @@ h1 {
   background-color: rgb(190, 190, 175);
   border-radius: 5px;
   letter-spacing: .1rem;
-  margin: 0 0 2em;
+  margin: 0 0 1.6em;
   font-size: calc(14px + (30 - 14) * (100vw - 320px) / (1900 - 320));
   padding: .7em 1.5em;
-
 }
 
 .page-title {
@@ -218,9 +213,8 @@ h1 {
   padding-top: 14vw;
   margin: 0 auto;
   max-width: none;
-  font-weight: 200;
   text-align: center;
-  letter-spacing: .4rem;
+  letter-spacing: .6rem;
   line-height: 1.2;
 }
 
@@ -236,8 +230,6 @@ h1 {
   flex-direction: column;
   padding: 3em 2em;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
   background-color: rgb(190, 190, 175);
 }
 
@@ -251,14 +243,10 @@ h1 {
   max-width: 400px;
 }
 
-.welcome-img-cta-container {
-  text-align: center;
-}
-
 .cta-large-screens,
 .cta-mobile {
   background-color: rgb(24, 24, 23);
-  padding: .8em 1em;
+  padding: .9em 1.1em;
   border-radius: 5px;
   color: rgb(236, 236, 233);
   text-decoration: none;
@@ -282,19 +270,20 @@ h1 {
 .mpi-section {
   background-color: rgb(122, 152, 110);
   border-radius: 8px;
-  max-width: 1300px;
-  padding: 1em 2em;
+  padding: 1em 2.5em;
   margin: auto;
   margin-bottom: 3em;
 }
 
+.mpi-section:last-of-type {
+  margin-bottom: 6em;
+}
+
 .mpi-section h3 {
-  font-family: 'josefin sans', sans-serif;
   font-weight: 600;
   font-size: calc(24px + (56 - 24) * (100vw - 320px) / (1900 - 320));
-  line-height: 1.25;
   text-align: center;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
 }
 
 
@@ -307,7 +296,7 @@ h1 {
 .mpi-flex-container img {
   width: 40%;
   max-width: 140px;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
 }
 
 
@@ -316,20 +305,6 @@ h1 {
 /* ****************************
       PRODUCT PAGE
 *******************************/
-
-.product .header-img {
-  max-width: 700px;
-}
-
-.product h1 {
-  font-family: 'josefin sans', arial;
-}
-
-.product h2 {
-  font-family: 'josefin sans', arial;
-  font-weight: 200;
-  margin-bottom: .6em;
-}
 
 .prod-container {
   display: flex;
@@ -342,8 +317,8 @@ h1 {
   align-items: center;
   margin: 0 auto 5em;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  min-width: 255px;
-  max-width: 400px;
+  min-width: 260px;
+  max-width: 440px;
 }
 
 .prod-tile img {
@@ -357,7 +332,7 @@ h1 {
 .product h3 {
   font-size: calc(20px + (28 - 20) * (100vw - 320px) / (1900 - 320));
   margin-bottom: -.3em;
-  margin-top: .8em;
+  margin-top: .85em;
 }
 
 .prod-tile-body-container {
@@ -377,13 +352,11 @@ h1 {
 .prod-tile-body-container>p {
   font-size: calc(14px + (20 - 14) * (100vw - 320px) / (1900 - 320));
   line-height: 1.5;
-  font-weight: 300;
 }
 
 .prod-price-cart-container {
   display: flex;
-  width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -400,7 +373,6 @@ h1 {
 }
 
 .prod-price-cart-container a {
-  font-family: 'josefin sans', arial;
   font-size: calc(12px + (18 - 12) * (100vw - 320px) / (1900 - 320));
   color: rgb(73, 73, 55);
   background-color: rgb(157, 157, 136);
@@ -421,11 +393,6 @@ h1 {
      CONTACT PAGE
 ***************************************/
 
-.contact .header-img {
-  max-width: 700px;
-}
-
-
 /* ===== FORM SECTION  ===== */
 
 hr {
@@ -441,27 +408,22 @@ form {
   background-color: rgb(190, 190, 175);
   border-radius: 5px;
   padding: 1em .5em;
-  max-width: 400px;
+  max-width: 440px;
   color: rgb(70, 70, 65);
 }
 
 form h3 {
-  font-size: calc(18px + (38 - 18) * (100vw - 320px) / (1900 - 320));
+  font-size: calc(20px + (38 - 20) * (100vw - 320px) / (1900 - 320));
   text-align: center;
+  margin: 1.25em 0;
   color: rgb(47, 47, 43);
 }
 
 form,
-form p,
 form button {
   font-size: calc(13px + (20 - 13) * (100vw - 320px) / (1900 - 320));
   font-family: 'josefin sans', arial;
   font-weight: 600;
-}
-
-form p {
-  margin: 0;
-  color: rgb(70, 70, 65);
 }
 
 input,
@@ -469,13 +431,13 @@ select,
 textarea {
   display: block;
   margin: auto;
-  margin-bottom: .85em;
-  margin-top: .6em;
+  margin-bottom: 1.5em;
+  margin-top: .5em;
   width: 100%;
   border: none;
   border-radius: 3px;
   background-color: rgb(227, 228, 217);
-  font-size: calc(13px + (18 - 13) * (100vw - 320px) / (1900 - 320));
+  font-size: calc(14px + (24 - 14) * (100vw - 320px) / (1900 - 320));
 }
 
 .input-block {
@@ -487,33 +449,29 @@ textarea {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  gap: 1vw;
+  gap: 1.5vw;
   margin: auto;
 }
 
-.name-container div {
-  flex: 1;
-}
-
-.name-container div input {
+.name-container div, .name-container div input {
   width: 100%;
 }
 
 input, select {
   height: 4vw;
-  min-height: 25px;
-  max-height: 45px;
+  min-height: 30px;
+  max-height: 40px;
 }
 
 textarea {
   height: 15vw;
-  min-height: 100px;
+  min-height: 90px;
 }
 
 form button {
   border: none;
   background-color: rgb(47, 47, 43);
-  padding: .75em 1.75em;
+  padding: .9em 1.75em;
   border-radius: 3px;
   display: block;
   margin: auto;
@@ -523,12 +481,11 @@ form button {
 
 /* ===== CONTACT INFO SECTION  ===== */
 
-
 .contact-info-container {
   text-align: center;
   font-family: 'open sans', arial;
   font-weight: 300;
-  border-radius: 9px;
+  border-radius: 10px;
   padding-top: 1em;
 }
 
@@ -546,7 +503,7 @@ form button {
   border-radius: 8px;
   background-color: rgb(122, 152, 110);
   width: 40%;
-  min-width: 180px;
+  min-width: 230px;
   margin: 1.5em auto;
 }
 
@@ -566,6 +523,10 @@ ul {
   padding: 0;
 }
 
+.li-spacing {
+  margin-top: .75em;
+}
+
 
 /* *************************************
       MEDIA QUERIES
@@ -576,26 +537,22 @@ ul {
 
   /* ===== All Pages ===== */
   body {
-    font-size: 1.25rem;
-    padding-top: 71px;
-  }
-
-  main {
-    width: 90%;
+    padding-top: calc(65px + 2vw);
   }
 
   header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: calc(65px + 2vw);
   }
 
   nav {
     background-color: transparent;
-    width: 47vw;
+    width: 45vw;
     max-width: 450px;
     margin: 0;
-    margin-right: .75em;
+    margin-right: 1em;
     padding: 0;
     padding-top: .6em;
   }
@@ -608,31 +565,29 @@ ul {
     display: inline;
   }
 
-  footer {
-    height: 110px;
-  }
-
 
   /* ===== Featured / Contact Pages ===== */
 
   .featured-img-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-top: 2em;
-    max-width: 1200px;
+    max-width: 1400px;
   }
-
 
   .product .header-img,
   .contact .header-img {
     width: 50%;
-    margin: 3em 0 0 auto;
+    margin: 2em 0 0 auto;
+  }
+
+  .product section:first-child,
+  .contact section:first-child {
+    margin-bottom: 2em;
   }
 
   .page-title {
-    width: 45%;
-    max-width: 500px;
+    width: 48%;
+
   }
 
   hr {
@@ -643,33 +598,27 @@ ul {
 
   /* ===== Home Page ===== */
 
-  .logo-container img {
-    width: 50px;
-  }
-
   .background-img {
     height: 56vw;
-    margin-bottom: 4em;
   }
 
   .home h1 {
     padding-top: 12vw;
   }
 
-  .welcome-flex-container p {
-    width: 90%;
-    margin: auto;
+  .welcome-flex-container h2 {
+    margin-top: .25em;
   }
 
   .home .header-img {
-    margin: auto;
     margin-bottom: 4vw;
+    width: 70%;
     max-width: 550px;
   }
 
-  .welcome-img-cta-container {
-    width: 75%;
-    margin: auto;
+  .welcome-flex-container {
+    padding: 3em;
+    margin-bottom: 8em;
   }
 
   .mpi-flex-container {
@@ -686,22 +635,26 @@ ul {
 
   /* ===== Product Page ===== */
 
+  .product main {
+    width: 92%;
+  }
+
+  .pre-products-container {
+    width: 95%;
+    margin: auto;
+  }
+
   .prod-container {
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: flex-end;
   }
 
   .prod-tile {
-    width: 45%;
+    width: 44%;
   }
 
 
   /* ===== Contact Page ===== */
-
-  .contact .featured-img-container {
-    justify-content: space-evenly;
-  }
 
   .contact h1 {
     margin-bottom: .8em;
@@ -711,25 +664,34 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1250px;
+    max-width: 1150px;
   }
 
   .msg-section-body-container {
-    width: 45%;
+    width: 40%;
+    margin-right: 1.5em;
+  }
+
+  .msg-section-body-container p:last-child {
+    margin-bottom: 0;
   }
 
   form {
-    width: 50%;
+    width: 53%;
     max-width: 600px;
     margin: 0;
-    padding: 1.5em 2em;
+    padding: 1.5em .5vw;
   }
 
   input,
   select,
   textarea {
-    margin-bottom: 1.5em;
-    margin-top: 1em;
+    margin-bottom: 1.35em;
+    margin-top: .3em;
+  }
+
+  textarea {
+    height: 12vw;
   }
 
   .contact-info-container {
@@ -739,7 +701,8 @@ ul {
   }
 
   .contact-info-tile {
-    width: 29%;
+    width: 30%;
+    min-width: 0;
     max-width: 300px;
   }
 }
@@ -751,22 +714,9 @@ ul {
 
   /* ===== All Pages ===== */
 
-  body {
-    padding-top: 80px;
-    font-size: 1.35rem;
-  }
-
-  .logo-container img {
-    width: 60px;
-  }
-
   nav {
-    width: 50vw;
-    max-width: 500px;
-  }
-
-  footer {
-    height: 125px;
+    width: 38vw;
+    max-width: 600px;
   }
 
 
@@ -774,16 +724,11 @@ ul {
 
   .home main {
     width: 85%;
+    max-width: 1350px;
   }
 
   .background-img {
     height: 53vw;
-    margin-bottom: 3em;
-  }
-
-  .home h1 {
-    padding-top: 12vw;
-    letter-spacing: .6rem;
   }
 
   .welcome-h2-mobile {
@@ -798,24 +743,33 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 2.75em;
     padding-bottom: 2.25em;
+    margin-bottom: 10em;
   }
 
   .welcome-flex-container div:nth-of-type(2) {
-    width: 40%;
-    max-width: 425px;
+    width: 41%;
+    max-width: 450px;
     padding-left: 1em;
   }
 
   .welcome-img-cta-container {
     justify-content: flex-start;
-    width: 57%;
+    width: 56%;
     margin: 0;
+    padding-top: .5em;
+    text-align: center;
+  }
+
+  .home .header-img {
+    width: 85%;
+    max-width: 650px;
+    margin-top: 3em;
   }
 
   .welcome-img-cta-container a {
-    margin: 1.5em 0;
+    margin: .25em 0;
+    padding: 1.15em 1.75em;
   }
 
   .cta-large-screens {
@@ -824,10 +778,6 @@ ul {
 
   .cta-mobile {
     display: none;
-  }
-
-  .cta {
-    padding: 1.1em 1.6em;
   }
 
   .mpi-flex-container {
@@ -845,13 +795,8 @@ ul {
   /* ===== Product Page ===== */
 
   .prod-tile {
-    width: 31%;
-    max-width: 420px;
-  }
-
-  section:nth-of-type(2) p,
-  section:nth-of-type(3) p {
-    width: 85%;
+    width: 30%;
+    max-width: 430px;
   }
 
 

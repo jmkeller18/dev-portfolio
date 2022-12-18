@@ -1,0 +1,485 @@
+/* pizza ordering app */
+
+
+/* ~~~~~~~base~~~~~~~ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #12403d;
+  font-family: 'Kantumruy Pro', sans-serif;
+  color: #fdfbce;
+  padding-bottom: 300px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Fredoka One', cursive;
+  width: fit-content;
+  color: #fdfbce;
+}
+
+h1 {
+  background-color: #ad7224;
+  box-shadow: .3em .25em #201301;
+  margin: .75em auto 1.5em;
+  padding: .5em 1.5em;
+  font-size: calc(22px + (68 - 22) * (100vw - 320px) / (1900 - 320));
+  letter-spacing: .2em;
+  text-shadow: .08em .06em #7b4e15;
+  border: .1em solid #d1a163;
+  border-radius: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: calc(28px + (40 - 28) * (100vw - 320px) / (1900 - 320));
+  margin: 1.25em auto;
+  letter-spacing: .3rem;
+  text-shadow: 6px 3px #011110
+}
+
+h3 {
+  letter-spacing: .1rem;
+  font-size: calc(20px + (26 - 20) * (100vw - 320px) / (1900 - 320));
+  margin-top: 0;
+}
+
+p {
+  margin: .15em 0;
+}
+
+button {
+  display: block;
+  color: #fdfbce;
+  padding: 1.5em 2em;
+  margin: 4em auto;
+  font-family: 'Fredoka One', cursive;
+  font-size: calc(14px + (18 - 14) * (100vw - 320px) / (1900 - 320));
+  font-weight: bold;
+  letter-spacing: .15rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.97);
+  filter: saturate(1.2) contrast(1.08);
+}
+
+button:disabled {
+  filter: grayscale() opacity(.6);
+  transform: none;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: 400;
+  font-size: calc(14px + (16 - 14) * (100vw - 320px) / (1900 - 320));
+}
+
+li:last-child {
+  margin-bottom: 1em;
+  padding-bottom: .75em;
+}
+
+label {
+  color: #fdfbce;
+  font-size: calc(17px + (22 - 17) * (100vw - 320px) / (1900 - 320));
+}
+
+input[type="checkbox"],
+input[type='radio'] {
+  height: calc(13px + (18 - 12) * (100vw - 320px) / (1900 - 320));
+  width: calc(13px + (18 - 12) * (100vw - 320px) / (1900 - 320));
+  accent-color: #26260d;
+  position: relative;
+  left: 1.6vw;
+}
+
+
+/* ~~~~~~~general~~~~~~~~ */
+.container {
+  width: 53%;
+  max-width: 400px;
+  min-width: 300px;
+  border-radius: 40px;
+  padding: 2.5em;
+  margin: 0 auto 2em;
+}
+
+.primary-container {
+  background-color: #ad7224;
+  box-shadow: 1em .8em #201301;
+}
+
+
+
+/* ORDER PAGE */
+.order-page-container {
+  width: 90%;
+  margin: auto;
+}
+
+.size-container div,
+.toppings-container div {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+  padding: .25em 3.5vw;
+}
+
+.current-pizza-container {
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1900 - 320));
+}
+
+
+.current-pizza-container>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-pizza-container>div:last-child {
+  margin-top: 1em;
+}
+
+.current-toppings-container {
+  flex-direction: column;
+  font-weight: 400;
+  font-size: calc(15px + (18 - 15) * (100vw - 320px) / (1900 - 320));
+}
+
+.current-toppings-container>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pizza-form-container textarea {
+  letter-spacing: .1rem;
+  color: #fdfbce;
+  font-family: 'Kantumruy Pro', sans-serif;
+  width: 100%;
+  font-size: calc(14px + (20 - 14) * (100vw - 320px) / (1900 - 320));
+  border: 3px solid #fdfbce;
+  border-radius: 20px;
+  background-color: #ad7224;
+}
+
+.pizza-form-container button {
+  box-shadow: .65em .4em #2e1d04;
+  background-color: #c5995f;
+  margin-bottom: 8em;
+}
+
+.checkout-button {
+  background-color: #496c6c;
+  box-shadow: .6em .4em #011110;
+}
+
+.order-subtotal-pizzas-container {
+  flex-direction: column;
+}
+
+
+/* order subtotal */
+.subtotal-checkout-container {
+  position: fixed;
+  width: 300px;
+  right: -300px;
+  padding: 2em;
+  top: 2em;
+  bottom: 2em;
+  background-color: #052523;
+  border-radius: 40px;
+  transition: .75s;
+  overflow: auto;
+}
+
+.subtotal-checkout-container h2 {
+  font-size: 1.75rem;
+}
+
+.order-collapse-button {
+  position: fixed;
+  right: 0;
+  top: 40%;
+  background-color: #011110;
+  border-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 1em .25em;
+  transition: .75s;
+}
+
+
+.order-subtotal-pizzas-container div {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.subtotal-checkout-container>div>div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* error message */
+.order-page-container>div:last-child {
+  display: none;
+  position: fixed;
+  width: 100%;
+  color: #12403d;
+  background-color: #b1dbd8;
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1900 - 320));
+  text-align: center;
+  padding: 1em;
+  margin: auto;
+  border: .3em solid #689491;
+  top: 200px;
+  left: 0;
+  right: 0;
+}
+
+.order-page-container>div:last-child h2 {
+  font-size: calc(26px + (36 - 26) * (100vw - 320px) / (1900 - 320));
+  margin: .5em auto;
+  text-shadow: none;
+  color: #12403d;
+  letter-spacing: .05em;
+}
+
+.order-page-container>div:last-child button {
+  background-color: #12403d;
+  color: #e1fefc;
+  border: none;
+  margin: auto;
+  margin-top: 1em;
+  padding: .75em 1.5em
+}
+
+
+/* CHECKOUT PAGE */
+.checkout-page-container {
+  display: none;
+  margin: auto;
+  width: 100%;
+}
+
+.info-summary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+}
+
+.checkout-page-container input {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  border-bottom: 3px solid #fdfbce;
+  width: 100%;
+  margin-bottom: 2em;
+  color: #fdfbce;
+  font-weight: 700;
+  padding-bottom: .5em;
+}
+
+.checkout-page-container input:focus {
+  outline: none;
+  border-bottom: 3px solid #6f450e;
+}
+
+.checkout-page-container input::placeholder {
+  color: #daa96a;
+  font-weight: 700;
+}
+
+.checkout-page-container button {
+  box-shadow: .65em .4em #2e1d04;
+  background-color: #c5995f;
+}
+
+
+/* total order summary */
+.order-total-container {
+  font-size: 1.25em;
+  border-top: 3px solid #fdfbce;
+  margin-top: 1.5em;
+  padding: .75em 0 .25em;
+}
+
+.order-summary {
+  background-color: #052523;
+  box-shadow: 1em .8em #011110;
+}
+
+.info-summary-container>div:first-child {
+  width: 100%;
+  min-width: 300px;
+}
+
+.summary-pizzas-container div,
+.summary-subtotal-container,
+.tax-container,
+.order-total-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* checkout form error */
+.checkout-error-message {
+  display: none;
+  width: 200px;
+  background-color: #d2cfa2;
+  color: #4b490f;
+  padding: 1em;
+  text-align: center;
+  border-radius: 15px;
+  position: relative;
+  bottom: 580px;
+  left: 360px;
+}
+
+
+/* submitted order */
+.submitted-container {
+  display: none;
+  width: 90%;
+  min-width: 250px;
+  max-width: 900px;
+  background-color: #052523;
+  box-shadow: 1em .7em #011110;
+  font-size: calc(16px + (32 - 16) * (100vw - 320px) / (1900 - 320));
+  line-height: 1.5;
+  padding: 2em 2em;
+  margin: auto;
+  margin-top: 2.5em;
+  border-radius: 80px;
+  text-align: center;
+}
+
+.submitted-container h2 {
+  font-size: calc(20px + (42 - 20) * (100vw - 320px) / (1900 - 320));
+  text-shadow: none;
+  letter-spacing: .1rem;
+  margin: auto;
+  margin-bottom: .6em;
+}
+
+
+
+/* ~~~~~~~QUERIES~~~~~~~ */
+
+/* tablets */
+@media screen and (min-width: 800px) {
+
+  /* general */
+  .container {
+    width: 88%;
+    max-width: none;
+  }
+
+  .pizza-form-container form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .pizza-form-container h2 {
+    margin: 1.25em 1.75em;
+  }
+
+
+
+  .left-pizza-form-container {
+    width: 45%;
+  }
+
+  .right-pizza-form-container {
+    width: 50%;
+  }
+
+  .info-summary-container>div:first-child, .info-summary-container>div:last-child {
+    max-width: 475px;
+  }
+
+
+}
+
+
+/* desktops */
+@media screen and (min-width: 1300px) {
+  .order-page-container {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    min-width: 1300px;
+    max-width: 1450px;
+    margin: auto;
+    border-radius: 50px;
+  }
+
+  .pizza-form-container {
+    width: 90%;
+  }
+
+
+  .subtotal-checkout-container {
+    position: static;
+    background-color: transparent;
+    width: 43%;
+    padding: 0;
+  }
+
+  .subtotal-checkout-container h2 {
+    font-size: calc(28px + (40 - 28) * (100vw - 320px) / (1900 - 320));
+  }
+
+  .order-subtotal-container {
+    background-color: #052523;
+    box-shadow: 1em .8em #011110;
+    width: 80%;
+    min-width: 300px;
+    border-radius: 40px;
+    padding: 2.5em;
+    margin: 0 auto 2em;
+  }
+
+  .order-collapse-button {
+    display: none;
+  }
+
+  .info-summary-container {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    max-width: 1500px;
+  }
+
+
+  /* checkout form  */
+  .info-summary-container>div:first-child {
+    width: 48%;
+    max-width: none;
+  }
+
+  .info-summary-container>div:last-child {
+    width: 33%;
+  }
+
+
+
+
+}

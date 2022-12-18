@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Party: Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Kantumruy+Pro:wght@300;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+
+  <h1>Pizza Party</h1>
+
+  <!-- pizza ordering page -->
+  <div class="order-page-container" id="orderDisplay">
+    <div class="pizza-form-container" id="pizzaForm">
+      <h2>Pizza Builder</h2>
+      <form id="pizzaForm" action="#">
+        <div class="left-pizza-form-container">
+          <div class="container primary-container size-container ">
+            <h3>Size</h3>
+
+            <div>
+              <label for="smallPizza">Small (12")</label>
+              <input type="radio" name="pizza-size" id="smallPizza">
+            </div>
+
+            <div>
+              <label for="mediumPizza">Medium (16")</label>
+              <input type="radio" name="pizza-size" id="mediumPizza">
+
+            </div>
+
+            <div>
+              <label for="largePizza">Large (20")</label>
+              <input type="radio" name="pizza-size" id="largePizza">
+
+            </div>
+          </div>
+
+          <div class="container primary-container">
+            <h3>Toppings</h3>
+            <div class="toppings-container">
+              <div>
+                <label for="sausage">Sausage</label>
+                <input type="checkbox" name="sausage" id="sausage">
+              </div>
+              <div>
+                <label for="pepperoni">Pepperoni</label>
+                <input type="checkbox" name="pepperoni" id="pepperoni">
+              </div>
+              <div>
+                <label for="chicken">Chicken</label>
+                <input type="checkbox" name="chicken" id="chicken">
+              </div>
+              <div>
+                <label for="bacon">Bacon</label>
+                <input type="checkbox" name="bacon" id="bacon">
+              </div>
+              <div>
+                <label for="tuna">Tuna</label>
+                <input type="checkbox" name="tuna" id="tuna">
+              </div>
+              <div>
+                <label for="onions">Onions</label>
+                <input type="checkbox" name="onions" id="onions">
+              </div>
+              <div>
+                <label for="peppers">Peppers</label>
+                <input type="checkbox" name="peppers" id="peppers">
+              </div>
+              <div>
+                <label for="mushrooms">Mushrooms</label>
+                <input type="checkbox" name="mushrooms" id="mushrooms">
+              </div>
+              <div>
+                <label for="jalapenos">Jalapeños</label>
+                <input type="checkbox" name="jalapenos" id="jalapenos">
+              </div>
+              <div>
+                <label for="pineapple">Pineapple</label>
+                <input type="checkbox" name="pineapple" id="pineapple">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" right-pizza-form-container">
+          <div class="container primary-container">
+            <h3>Current Pizza</h3>
+            <div class="current-pizza-container" id="currentPizzaContainer">
+              <div>
+                <p id="pizzaSizeDescription"></p>
+                <p id="sizePrice"></p>
+              </div>
+
+              <div class="current-toppings-container" id="currentToppingsContainer"></div>
+
+              <div id="currentSubtotalContainer">
+                <p>Subtotal</p>
+                <p id="currentSubtotal">$0.00</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="container primary-container">
+            <h3>Special Instructions</h3>
+            <textarea name="pizzaInstructions" id="pizzaInstructions" cols="30" rows="5" maxlength="60"></textarea>
+          </div>
+          <button type="submit" id="addPizzaButton">Add to Order</button>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="subtotal-checkout-container" id="subtotalCheckoutContainer">
+      <h2>Your Order</h2>
+      <div id="orderSubtotalContainer" class="order-subtotal-container">
+        <div id="orderSubtotalPizzasContainer" class="order-subtotal-pizzas-container"></div>
+        <div >
+          <p>Order Subtotal</p>
+          <p id="orderSubtotal">$0.00</p>
+        </div>
+        <button id="orderCollapseButton" class="order-collapse-button"><span class="material-symbols-outlined">
+          sync_alt
+          </span></button>
+      </div>
+      <button id="checkoutButton" class="checkout-button">Checkout</button>
+    </div>
+
+    <div class="container" id="pizzaErrorMessage">
+      <h2>Whoops!</h2>
+      <p id="pizzaErrorResponse"></p>
+      <button id="pizzaErrorButton">OK</button>
+    </div>
+  </div>
+
+
+  <!-- checkout page -->
+  <div class="checkout-page-container" id="checkoutDisplay">
+    <div class="info-summary-container">
+      <div id="orderSummary">
+        <h2>Order Summary</h2>
+        <div class="container order-summary">
+          <div id="summaryPizzasContainer" class="summary-pizzas-container"></div>
+          <div id="summarySubtotalContainer" class="summary-subtotal-container">
+            <p>Subtotal</p>
+            <p id="summarySubtotal"></p>
+          </div>
+          <div id="taxContainer" class="tax-container">
+            <p>Tax</p>
+            <p id="tax"></p>
+          </div>
+          <div id="orderTotalContainer" class="order-total-container">
+            <p>Order Total</p>
+            <p id="orderTotal"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="deliveryFormContainer">
+        <h2>Delivery Info</h2>
+        <form id="deliveryForm" action="#">
+          <div class="container primary-container">
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+            <input type="text" name="phone" id="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="Phone Number" required>
+            <input type="text" name="streetAddress" id="streetAddress" placeholder="Street Address" required>
+            <input type="text" name="city" id="city" placeholder="City" required>
+            <input type="text" name="zipCode" id="zipCode" minlength="5" maxlength="5" placeholder="Zip Code" required>
+          </div>
+          <div>
+            <button type="submit" id="submitOrderButton">Place Order</button>
+          </div>
+        </form>
+
+        <div class="checkout-error-message" id="checkoutErrorMessage">
+          <p id="checkoutErrorResponse"></p>
+        </div>
+      </div>
+
+
+      
+
+
+    </div>
+
+    <div class="submitted-container" id="submittedContainer">
+      <h2>Order Received!</h2>
+      <p>Just sit tight and we'll have your pizzas over to you as soon as we can. Hope you're hungry!</p>
+    </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

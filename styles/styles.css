@@ -1,0 +1,74 @@
+/* my portfolio */
+
+/* ~~~~~base~~~~~ */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(62, 68, 62);
+  color: rgb(228, 240, 191)
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: rgb(228, 240, 191);
+
+}
+
+
+/* ~~~~~general~~~~~ */
+.page-wrapper {
+  width: 90%;
+  margin: auto;
+  min-width: 300px;
+}
+
+.welcome-container {
+  margin-bottom: 4em;
+}
+
+.welcome-container p {
+  padding: 0 1.5em;
+}
+
+.projects-container {
+  padding: 0 1.5em;
+}
+
+.projects-container div {
+  margin-bottom: 3em;
+  background-color: rgb(84, 89, 84);
+  padding: 1em 2em;
+  border-radius: 30px;
+}
+
+/* ~~~~~ Media Queries ~~~~~~ */
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  .page-wrapper {
+    width: 70%;
+  }
+}
